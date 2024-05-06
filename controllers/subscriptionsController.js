@@ -25,7 +25,7 @@ const addSubscription = async (req, res) => {
 };
 
 const removeSubscription = async (req, res) => {
-  const { email, channelName } = req.body
+  const { email, channelName } = req.body;
 
   try {
     const removeSubscription = await subscriptionsModel.findOneAndDelete({

@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 // get all videos
 const getVideos = async (req, res) => {
-  const { email } = req.params
+  const { email } = req.params;
   const watchList = await WatchListModel.find({ email }).sort({
     createdAt: -1,
   });
@@ -14,9 +14,7 @@ const getVideos = async (req, res) => {
 const addVideo = async (req, res) => {
   try {
     const { email, video } = req.body;
-    const watchList = await WatchListModel.create(
-      { email, video },
-    );
+    const watchList = await WatchListModel.create({ email, video });
     res.status(200).json(watchList);
   } catch (error) {
     console.log(error);
@@ -38,4 +36,4 @@ module.exports = {
   getVideos,
   addVideo,
   removeVideo,
-}
+};
