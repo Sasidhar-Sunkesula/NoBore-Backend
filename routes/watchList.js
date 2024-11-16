@@ -15,7 +15,6 @@ router.use(requireAuth);
 // GET all videos in watchlist
 router.get("/:email", getVideos);
 
-
 // POST a new watchlist video
 router.post("/", addVideo);
 
